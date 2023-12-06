@@ -1,7 +1,8 @@
+
 # YouTube Transcript Word Cloud Generator
 
 ## Introduction
-This project provides a tool to extract transcripts from YouTube videos, process the text data, and generate a word cloud visualization. It's particularly useful for analyzing keynotes or presentations to quickly identify the most frequently mentioned terms.
+This project provides a Jupyter Notebook tool to extract transcripts from YouTube videos, process the text data, and generate a word cloud visualization. It's particularly useful for analyzing keynotes or presentations to quickly identify the most frequently mentioned terms.
 
 ## Installation
 
@@ -9,6 +10,7 @@ This project provides a tool to extract transcripts from YouTube videos, process
 Before you begin, ensure you have the following installed:
 - Python 3.x
 - pip (Python package installer)
+- Jupyter Notebook
 
 ### Setup
 1. Clone the repository:
@@ -26,19 +28,17 @@ Before you begin, ensure you have the following installed:
 
 ## Usage
 
-To use this tool, follow these steps:
+To use this tool in a Jupyter Notebook, follow these steps:
 
 1. Find the YouTube video ID for the transcript you want to analyze. The video ID is the string after `watch?v=` in the YouTube URL.
-2. Open the script and replace the `video_id` variable's value with your desired YouTube video ID.
-3. Run the script:
-   ```bash
-   python [Your Script Name].py
-   ```
-4. The script will display a word cloud based on the transcript of the provided YouTube video.
+2. Open the Jupyter Notebook included in the repository.
+3. Replace the `video_id` variable's value in the notebook with your desired YouTube video ID.
+4. Run the cells in the Jupyter Notebook.
+5. The notebook will display a word cloud based on the transcript of the provided YouTube video.
 
 ## Customization
 
-You can customize the list of stop words in the script by modifying the `more_stop_words` list. Add any word you want to exclude from the word cloud analysis.
+You can customize the list of stop words in the notebook by modifying the `more_stop_words` list. Add any word you want to exclude from the word cloud analysis.
 
 ## Acknowledgments
 
