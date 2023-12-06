@@ -5,6 +5,7 @@
 This project provides a Jupyter Notebook tool to extract transcripts from YouTube videos, process the text data, and generate a word cloud visualization. It's particularly useful for analyzing keynotes or presentations to quickly identify the most frequently mentioned terms.
 
 ## Installation
+WordCloud might not be compatible with PY > 3.10. Tested with 3.9
 
 ### Prerequisites
 Before you begin, ensure you have the following installed:
