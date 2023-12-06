@@ -56,4 +56,4 @@ This project uses several open-source packages:
 
 Eric Vogelpohl - eric.vogelpohl@outlook.com
 
-Project Link: [Your Project GitHub URL]
+Project Link: https://github.com/evogelpohl/youtube_transcript_wordcloud
