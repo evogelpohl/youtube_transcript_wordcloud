@@ -1,4 +1,7 @@
 youtube_transcript_api
 nltk
-wordcloud
 matplotlib
+numpy
+pillow
+wordcloud
+
