@@ -13,11 +13,11 @@ Before you begin, ensure you have the following installed:
 ### Setup
 1. Clone the repository:
    ```bash
-   git clone [Your Repository URL]
+   git clone https://github.com/evogelpohl/youtube_transcript_wordcloud
    ```
 2. Navigate to the project directory:
    ```bash
-   cd [Your Repository Directory]
+   cd youtube_transcript_wordcloud
    ```
 3. Install the required packages:
    ```bash
