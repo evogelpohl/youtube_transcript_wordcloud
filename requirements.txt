@@ -1,7 +1,0 @@
-youtube_transcript_api
-nltk
-matplotlib
-numpy
-pillow
-wordcloud
-
