@@ -1,2 +1,28 @@
-.ipynb_checkpoints
-.vscode
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore VS Code settings folder
+.vscode/
+
+# Ignore macOS specific file
+.DS_Store
+
+# Ignore Python bytecode files
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environment directories
+env/
+venv/
+
+# Ignore other common files
+*.log
+*.sqlite3
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore all system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
