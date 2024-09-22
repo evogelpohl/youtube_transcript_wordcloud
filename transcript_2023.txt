@@ -1,0 +1,813 @@
+presenter: welcome, everybody. i'm very excited to
+welcome fe-fei li today. and of course, judging by
+how packed this room is, fei-fei doesn't really
+need an introduction. and of course, if
+i actually were to introduce her
+by reading her bio, it would take a majority
+of today's time. so i'll keep this brief. fei-fei is a professor
+at stanford, where she was also my phd advisor. she's the director of the
+human centered ai institute at stanford. and during the years
+of 2017 and 2018, she was also the vice
+president at google, as well as the chief
+scientist of ai and machine learning at google cloud. she, of course, has
+published hundreds of papers. and perhaps one of the ones that
+a lot of people know her for is imagenet, which
+as you all know, has ushered in the deep
+learning ai revolution that we're all in today. she also serves as
+a special advisor to the secretary general
+of the united nations, and is also a member of the
+national ai resource task force for the white house office
+of science and technology. and recently, she also
+has published her book titled, the world i see-- curiosity, exploration, and
+discovery at the dawn of ai. and i'm sure she'll be talking
+about parts of that book today. so with that, fei-fei,
+welcome to the university of washington. fei-fei li: thank you. [applause] thank you. thank you. well, it's quite an
+honor to be here. actually it's as a professor one
+of the greatest joys and honor is to work with
+the best students, and see how their
+career has grown. and so being invited by
+ranjay and his colleagues is really very special. and i'm just loving
+all the energy i've seen throughout the day today. so ok, i want to share
+with you a talk that is a little bit meant
+at the high level and an overview of what i
+have done over the years, through the lens
+of computer vision and the development of ai. so the title is "what
+we see & what we value-- ai with a human perspective." i'm going to take you back
+to history a little bit. and when i say history, i
+meant 540 million years ago. so 540 million years
+ago, what was that? well, the earth is
+a primordial soup. and it's all living
+things live in the water. and there aren't
+that many of them. they are just simple
+animals floating around. but something really
+strange happened in geologically a very
+short period of time, about 10 million years, is from
+fossil studies scientists have found there is an explosion
+of the number of animal species around that time. so much that that period
+is called the cambrian explosion or some people call
+it the big bang of evolution. and so what happened? why suddenly when life
+was so chill and simple, not too many animals,
+why life went from that picture to an explosive
+number of animal species? well, there are many
+theories, from climate change to chemical composition of
+the water, to many things. but one of the leading theories
+of that cambrian explosion is by andrew parker, a
+zoologist from australia. he conjectured that this
+speciation explosion is triggered by the sudden
+evolution of vision, which sets off an evolutionary arms
+race where animals either evolved or died. basically, he's saying as soon
+as you see the first light, you see the world in
+fundamentally different ways. you can see food. you can see shelter. you can become someone's food. and they would
+actively prey on you. and you have to actively
+interact and engage with the world in order
+to survive and reproduce, and so on. so from that point on, 540
+million years to today, vision, visual intelligence has become
+a cornerstone of the development and the evolution of nervous
+system of animal intelligence. all the way to, of course, the
+most incredible visual machine we know in the universe
+which is the human vision. and whether we're talking
+about people and many animals, we use vision to navigate
+the world, to live life, to communicate, to
+entertain ourselves, to socialize, to
+do so many things. well, that was a very brief
+history of nature's vision. what about computer vision? the history of computer
+vision is a little shorter than evolution. urban legend goes around
+60 years ago, 1966 i think, that there was one ambitious
+mit professor who said, well, ai as a field has been born. and it looks like
+it's going well. i think we can just
+solve vision in a summer. in fact, we'll solve vision
+by using our summer workers, undergrads, and we'll
+just spend this one summer to create or
+construct a significant part of visual system. this is not a
+frivolous conjecture. i actually sympathize with him. because for humans when
+you open your eyes, it feels so effortless to see. it feels that as soon
+as you open your eyes, the whole world's information
+is in front of you. so it might be turned out
+to be an underestimation of how hard it is to
+construct the visual system. but it was a heroic effort. they didn't solve vision
+in a summer, not even a tiny bit of vision. but 60 years later, vision
+today has become a very thriving field, both academically as
+well as in our technology world. i'm just showing you a couple
+of examples of where we are. right? we have visual
+applications everywhere. we're dreaming of self-driving
+cars, which hopefully will happen in our lifetime. we are using image
+classification or image recognition and so many image
+technologies for many things from, health care
+to just daily lives. and generative ai has
+brought a whole new wave of visual applications
+and breakthroughs. so the rest of the
+talk is organized to answer this question. where have we come from and
+where are we heading to? and i want to share with
+you three major theses of the work that
+i have been doing in my career in
+recent few years, and just to share
+with you what i think. let's begin with building
+ai to see what humans see. why do we do that? because humans are
+really good at seeing. this is a 1970s cognitive
+science experiment to show you how good humans are. every frame is refreshed
+at 10 hertz, 100 milliseconds of presentation. if i ask you as audience, i
+assume given how young you are-- you're not
+even born then-- you've never seen this video. nod your head when you see one
+frame that has a person in it. you will see it. yeah, ok. you've never seen this video. i didn't tell you what
+the person looked like. i didn't tell you which
+frame it will appear. you have no idea-- the
+gesture, the clothes, everything about this. yet, you're so good at
+detecting this person. around the turn of the century,
+a group of french researchers have put a time on
+this effortlessness. it turned out seeing complex
+objects or complex categories for humans is not only
+effortless and accurate, it's fast. 150 milliseconds after the
+onset of a complex photo, either containing
+animals or not containing animals, humans you can
+measure brain signal that shows that differential signal
+of pictures, of scene pictures with animals and scene
+pictures without animals. it means that it takes about
+150 milliseconds in our wetware, right here, from the photons
+landing on your retina to the decision that
+you can make accurately. i know this sounds
+slow for silicons. but for our brain,
+for those of you who come from a little bit
+of neuroscience background, this is actually super fast. it takes about 10
+stages of spikes from passing from neuron
+to neuron to get here. so it's a very
+interesting measurement. at around the same time,
+neurophysiologists, so we've had psychologists
+telling us humans are really good
+at seeing objects. we've got neuroscientists
+telling us not only we're good at it, we're fast. now, this last set of study,
+also neurophysiologists use mri study to tell
+us, because evolution has optimized recognition so
+much that we have dedicated neural correlates in the
+brain, areas that specializes in visual recognition. for example, the
+fusiform face area, or the parahippocampal
+place area-- these are areas that we
+see objects and scenes. so what all this has told us,
+this research from the '70s, '80s, and '90s have
+told us, is that objects are really important
+for visual intelligence. it's a building
+block for people. and it's become a north star
+for what vision needs to do. it's not it's not
+all the north stars, but it's one
+important north star. and that has guided the early
+phase of my own research as well as the field
+of computer vision. as a field, we identified that
+object recognition, object categorization, is
+an important problem. and it's a mathematically
+really challenging problem. it's effortless for us. but to recognize, say,
+a cute animal wombat, you actually have
+mathematically infinite way of rendering this animal
+wombat from 3d to the 2d pixels, whether it's
+lighting and texture variations, or background
+clutter and occlusion variations, or viewing angle
+camera angle occlusions, and so on. so it's mathematically
+a really hard problem. so what did we do as a field? i summarized the progress
+of object recognition in three phases. the first phase was concurrent. it's a very early phase,
+concurrent with this cognitive studies is what i call
+the hand-designed features of models. this is where very
+smart researchers use their own sheer
+power of their brain to design the kind of
+building blocks of objects, as well as the model, the
+parameters, and so on. so we see geon theory. we see generalized cylinder. we see parts and springs models. and these are in the
+'70s, '80s, or early '90s. they're beautiful theory. they're mathematically
+beautiful models. but the thing is,
+they don't work. they're theoretically beautiful. then there's a
+second phase, which i think is the most
+important phase actually, leading up to deep learning,
+which is machine learning. it's when we have
+introduced machine learning as a statistical
+modeling technique, but the input of these models
+are hand-designed features like patches, and
+parts of objects that are meant to carry a
+lot of semantic information. and the idea is that in
+order to recognize something like a human body, or a
+face, or whatever, a chair-- it's important to get
+these patches that contains ears and eyes and whatever. and then you use
+machine learning models to learn the parameters
+that stitch them together. and this is when the whole
+field has experimented with many different kinds
+of statistical models from bayes net, support
+vector machine, boosting, conditional random field, random
+forest, and neural network. but this is the
+first phase of that. something also important
+happened concurrently with this phase is actually
+the recognition of data. in the early years
+of the 21st century, the field of computer
+vision recognized it's important to have
+benchmarking data sets, data sets like the
+pascal voc data set, the caltech 101 data set. that is meant to measure
+the progress of the field. and it turned out
+they can also become some level of training data. but they're very small. they're in the order of hundreds
+and thousands of pictures, and a handful of
+object categories. personally for me,
+this was around the time i stumbled upon
+a very incredible number. i call it, if you read my book,
+i call it the biederman number. professor biederman who sadly
+just passed away a year ago, is a cognitive psychologist
+studying vision and thinking about the scale and scope of
+human visual intelligence. and back of envelope, he
+put a guesstimate of humans can recognize 30 to
+100,000 object categories in their lives. and it's not a verified number. it's very hard to verify. this is a conjecture
+in one of his papers. and he also went on
+to say that by age 6, you actually learn pretty
+much all the visual categories that a grown-up has learned. this is an incredible speed of
+learning, a dozen a day or so. so this number bugged
+me a lot because it just doesn't compare to all the data
+sets we've seen at that point. and that was the reason,
+the inception of imagenet, that we recognized, my students,
+jordan, and collaborators, and i recognize that there's
+a new way of thinking about visual intelligence. it's deeply, deeply data driven. and it's not just
+the size of the data. it's the diversity of data. and this is really history. you all know what imagenet is. and it also brought back
+the most important family of algorithm that
+is high capacity, and needs to be
+data driven, which is convolutional or
+neural network algorithm. and in the case of
+vision, we started with convolutional
+neural network. for those of you who
+are very young students, you probably don't
+remember this. but even when i was
+a graduate student at the turn of the century,
+convolutional neural network was considered a
+classic algorithm, meaning it was pretty old. and it didn't work. but we still studied it when
+i was a graduate student. it was incredible to see how
+data and the new techniques revitalized this whole
+family of algorithms. and for this audience,
+i'm going to skip. this is really too trivial. but what happened is that this
+brought us the third phase of object recognition. and i would say more or less,
+quite a triumphant phase of object recognition, where
+using big data as training and convolutional
+neural network, we're able to recognize objects
+in the wild in a way that the first two phases couldn't. and these are just examples. and of course, the
+most incredible moment, even for myself who
+was behind imagenet, was 2012 when professor geoff
+hinton and his students, very famous students,
+have written this defining paper as the beginning of
+the deep learning revolution. and ever since then, vision as
+a field and imagenet as a data set has really been driven a
+lot of the algorithm advances in the pre-transformer
+era of deep learning. and very proudly as a field,
+even work like resnet, were the precursors of
+many of the attention is all you need paper. so vision as a field
+has contributed a lot to deep learning evolution. ok, so let me fast forward. as researchers,
+after imagenet, we were thinking about what is
+beyond object recognition. and this is really
+ranjay's thesis work, is that the world is not just
+defined by object identities. if it were, these two
+pictures both contain a person and a llama,
+would mean the same thing. but they don't. i'd rather be the
+person on the left than the person on the right. actually, i'd
+rather be the llama on the left than the llama
+on the right as well. so objects are important,
+but relationships, context, and structure and
+compositionality of the scene are all part of the richness
+of visual intelligence. and the image, that was
+not enough to push forward this kind of research. so again, heroically
+ranjay was really the key student who was
+pushing a new way of thinking about images and
+visual representation, mostly focusing on
+visual relationships. so the way ranjay and we put
+together the next wave of work was through scene
+graph representation. we recognize the entities of the
+scene in the unit of objects, but also their own
+attributes as well as the inter-entity relationships. and we made a data set--
+it was a lot of work-- called visual genome. that consisted of hundreds
+of thousands of images, but millions of relationships,
+attributes, objects, and even natural
+language descriptions of the images as a way
+to capture the richness of the visual world. there are many works that
+came out of visual genome, and a lot of them were
+written by ranjay. but one of my favorite works
+is this one-shot learning of visual relationships
+that ranjay did where you use the
+compositionality of the objects to learn relationships
+like people riding horse, people wearing hats. but what comes out of it with
+the compositionality is almost for free, is the
+capability of recognizing long-tail relationships
+that you will never have enough training examples. but you're able to do
+it during inference, which is like horse
+wearing hat, or person sitting on fire hydrant. and that really taps into
+the relationship as well as the compositionality of images. and yeah, there were some
+quantitative measurement that shows our work at that time--
+now it's ancient time-- that does better than
+the state of the art. we also went beyond just
+a contrived labeling of objects or relationships
+that went into natural language. and there was a series of papers
+started with my former student andre karpathy, many of
+you know, justin johnson, on image captioning, dense
+captioning, paragraph generation. i want to say one
+thing that shows you how badly at least me
+or oftentimes scientists predicts the future. when i was a graduate
+student, when i was about to graduate,
+2005, i remember it was very clear to me my
+life dream as a computer vision scientist was to,
+when i die, i want to see computers can tell
+a story from a picture. that was my life's dream. i feel that if we can put
+a picture into the computer and it will tell us
+what's happening, a story, we've achieved the goal
+of computer vision. i never dreamed less than 10
+years, just around 10 years after my graduation, this dream
+was realized collectively, including my own lab, by
+lstm at that point, and cnns. it was just quite a remarkable
+moment for me to realize. first of all, it's
+kind of the wrong dream to say that that's the
+end of the computer vision achievement. second, i didn't know
+how fast it would come. so be careful what you dream of. that was the moral of the story. but static relationships
+are easier. real world is full of
+dynamic relationships. dynamic relationships
+are much more nuanced and more difficult. so
+this is fairly recent work. it was i think at
+neurips two years ago. and we're still doing this work
+on multi-object, multi-actor activity recognition
+or understanding. and that is an ongoing work. i'm not going to get into
+the technical details. but the video
+understanding, especially with this level of nuance and
+details, still excites me. and it's an unsolved problem. i also want to say that vision
+as a field has been exciting, not only because i'm
+doing some work in it. it's because some
+other people's work. and none of these
+are my own work. but i find that
+the recent progress in 3d vision, in
+pose estimation, in image segmentation,
+with facebook sam and all the generative ai work has
+been just incredible progress. so we're not done with building
+ai to see what humans see. but we have gone a long way. and part of that is
+the result of data, compute, algorithms,
+like neural networks that really brought this
+deep learning revolution. and as a computer
+vision scientist, i'm very proud that our field
+has contributed to this. and ai's development
+has been and i continue to believe will
+be inspired by brain sciences and human cognition. and for this section, i'm
+very appreciative of all the collaborators, current
+and former students, and ranjay you're a part of
+them, who has contributed. let's just fast
+forward to building ai to see what humans don't see. well, i just told you
+humans are super good. but i didn't tell you that
+we're not good enough. for example, i don't
+know about you, but i don't think i can
+recognize all these dinosaurs. and in fact, recognizing very
+fine-grained objects is not something humans are good at. there are more than 10,000
+types of birds in the world. we put together or
+we got our hands on a data set of
+4,000 types of birds. and humans typically
+fail miserably in recognizing all
+species of birds. and this is an area
+called fine-grained object categorization. and in fact, it's
+quite exciting to think about computers at this point
+can go beyond human ability to train detectors,
+object detectors, that can do much finer grain
+understanding of objects beyond humans. and one of the
+application papers we did which i find
+very fascinating, is a fine-grained
+car recognition. we downloaded 3,000 types of
+cars, separated by make, model, year that's ever built
+by 1970s, starting 1970s. we stopped before
+tesla was popular. so people always ask
+me this question. where's tesla? we don't have tesla. and after we trained the
+fine-grained object detector for thousands of
+cars, 3,000 of cars, we downloaded
+street view pictures of 100 american cities,
+most populated cities, two per state. and we also correlated
+this with all the census data that came out of 2010. and it's incredible to see the
+world through vision as a lens, the correlation between car
+detection and human society is stunning, including income,
+including education level, including voting patterns. we have a long paper that
+has dozens and dozens of these correlations. so i just want to show you that
+even though we don't see it with our individual eyes,
+but computers can help us see our world, see our society
+through these kind of lenses in ways that humans can't. ok, to drive home this idea that
+humans are not that good, even though 10 minutes ago
+i told you're so good, is this visual illusion
+called stroop test. try to read out to yourself
+the color of the word, not the word itself. go left to right and top to
+bottom, as fast as possible. it's really hard, right? i have to do red, orange,
+green, blah, blah, blah. that's a fun visual illusion. this one some of you
+probably have seen. these are two
+alternating pictures. they look like the
+same but there's one big chunk that's different. can you tell? raise your hand if you can. it's an iq test. [laughter] m so all the faculty
+were thinking, oh no. i didn't raise my hand. ok, so it's the engine. oh. ok, so it's a huge chunk. this has landed on your retina. and you completely missed it. ok, good job. [laughter] it's not that funny, if
+it's in the real world, when it's a high stake situation. whether you're passing through
+airport security or doing surgeries. so actually not seeing can
+have dire consequences. medical error is the
+third-leading cause of american patients'
+deaths annually. and in surgery rooms, accounting
+for all the instruments and glasses and all that is
+actually a critical task. if something is
+missing, on average a surgery will stop
+for more than one hour, so that the nurses
+and doctors have to identify where the thing is,
+and think about all the life risk to the patient. and what do we do today? we use hand and count. and imagine if we can
+use computer vision to automatically
+assist our doctors and nurses to account
+for small instruments in a surgical setting. that would be very helpful. and this is an
+ongoing collaboration between my lab's health care
+team and stanford hospital surgery department. this is a demo of
+accounting for these glasses during a surgical scenario. and this would, if this
+becomes mature technology, i really hope this would
+have really good application for these kind of uses. sometimes seeing is
+not just attention. every example i just
+showed you there seemed to be attentional deficit. but sometimes seeing is
+more profound, or not seeing is more profound. this is my really
+favorite visual illusion, since i was a graduate student,
+made by ted edison at mit. and i'm just showing
+you the answer. this checkerboard
+illusion, if you look at the top graph
+checkerboard a and b, no matter what i
+tell you they look like different
+gray scales, right? i mean, how could they on
+earth have the same gray scale. but if i added this,
+you see that they're the same gray scale. so this is a visual illusion. even if you know
+the answer, it's hard to not be
+tricked by your eyes. for those of you who are old
+enough, who do you see here? audience: bill
+clinton and al gore. fei-fei li: clinton
+and gore, right? is it? is it clinton and gore? so it turned out they
+are clinton and clinton. and it's a copy of clinton's
+face in gore's hair, and in a context,
+that it is very primed for all of us to see
+them as clinton and gore. so being primed is a
+fundamental thing of human bias. and in computer vision,
+we have also inherited, if we're not careful,
+computer vision has inherited human bias,
+especially through data sets. so joy buolamwini
+used to be at mit, had written this beautiful
+poem that exposes the bias of computer vision. so i'm not nearly
+as a leading expert as joy and many
+other people are. but it's important to point
+out that not seeing has consequences. and we need to work
+really hard to combat these biases that creep into
+computer vision and ai systems. and these are just really
+examples of hundreds and hundreds of
+thousands of papers and work people are doing
+in combating biases. now on the flip side,
+sometimes not seeing is a must, as seeing too much
+is also really bad. this brings us to
+the value of privacy. and my lab has
+been actually doing quite a bit in the
+context of health care, but quite a bit of privacy
+computing in the past few years in terms of how we can protect
+human dignity, human identity, in computer vision context. one of my favorite works
+that's not led by me is by juan carlos niebles. that combines both
+hardware and software to try to protect human
+privacy while still recognizing human behaviors
+that are important. the idea is the following. if you want to look
+at what humans do, you take a camera you shoot
+a video and you analyze it. in this case, a baby
+is pushing a box. what if you don't want
+to reveal this kid? what if you don't want to
+reveal the environment? can you design a lens that blurs
+the raw signal, like you never take the pure pixel signal? what if the designed lens
+gives you a signal like that? so for humans, you
+don't even see the baby. well, that's exactly
+what they did. they designed a warped lens. and the lens gives you a
+raw signal in the top row. but they also
+designed an algorithm that retrieves not
+super resolution, they have no
+intention to recover the identity of the
+people, but just to recover the activity they need to know. this way their combined
+hardware-software approach not only protects privacy,
+but also reads out the insight that whether
+you're in transportation cases or health care cases, that is
+relevant to the application users. so building ai to see
+what humans don't see is part of computer
+vision's quest. it's also important to
+recognize sometimes what humans don't see is bad, like bias. but we also want to
+make computer not see the things that we want
+to preserve privacy for. so in general, ai can
+amplify and exacerbate many profound issues that has
+plagued human society for ages, and we must commit
+to study and forecast and guide ai's impact
+for human and society. and many students
+and former students have contributed to
+this part of the work. let's talk about building ai
+to see what humans want to see. and this is where
+really putting humans more in the center of designing
+technology to truly help us. when you hear the
+word ai, well, you're kind of a biased audience. but when the
+general public hears about ai today, what
+is the number one thing that comes to their mind? anxiety, right? a lot of that anxiety is
+labor landscape, jobs. and this is very important. and if you go to
+headlines of news, every other day we see that. but there is actually
+a lot of cases where human labor
+is in dire shortage. and again, this brings me back
+to the health care industry that i also work with. america was missing at least
+1 million nurses last year. and the situation is
+just worse and worse. i talked about the
+medical error situation in our health care system. the aging society is
+exacerbating the issue of lack of caretakers. and a lot of these burdens fell
+on women and people of color in very unfair ways. care-taking is not
+even counted in gdp. so instead of thinking about
+ai replacing human capability, it is really valuable to think
+about ai augmenting humans, and to lift human
+jobs, and to also give human a hand,
+especially health care from a vision perspective. there are so many times
+and so many scenarios that we're in the dark. we don't know how
+the patient is doing. we don't know if the care
+delivery is high quality. we don't know where that
+small instrument was missing in the surgical room. we don't know if we're making
+a pharmaceutical error that might have dire consequences. so in the past 10 years, my
+lab and i and my collaborators have started this fairly
+new area of research called ambient intelligence
+for health care, where we use smart sensors, mostly
+depth sensors and cameras, and machine learning
+algorithms to glean health critical insights. most of this earlier
+work was summarized in this nature article
+called "illuminating the dark spaces of healthcare
+with ambient intelligence." i'll just give you a
+couple of quick examples. one case study is hand hygiene. we started this work
+way before covid. everybody thought this is
+the most boring project. but when covid came,
+it became so important. it turned out that
+hospital acquired infection kills three times
+more people in america than car accidents every year. and a lot of that is because
+of doctors and nurses carrying germs and
+bacteria from room to room. so who has very specific
+protocols for hand hygiene. but humans make mistakes. and now the way to
+monitor that by hospitals is very expensive,
+sparse, and disruptive. they put humans in front of-- i don't know the patient rooms,
+and try to remind the doctors and nurses. you can see this is
+completely non-scalable. so my students and i
+have been collaborating with both stanford children's
+hospital and utah's intermountain hospital by
+putting depth sensors in front of these hand hygiene
+gel dispensers, and then using video analysis
+and activity recognition system to watch
+if the health care workers are doing the right
+thing for hand hygiene. and quantitatively,
+the bottom line is the ground truth
+of human behavior. you can see that the computer
+vision algorithm's precision and recall is very high
+compared to even human observers that we put in the hospital
+in front of the hospital room. another example is icu
+patient mobility project where we getting patient to
+move in the right way in the icu is really important. it helps our
+patients to recover. and on top of that,
+icu is so important. it's 1% of us gdp
+is spent in icu. health care is 18%. so this is where patients
+fight for death and life. and we want to help
+them to recover. we work with stanford
+hospital to put these sensors, again rgbd sensors in icu rooms. and we study how the
+patients are being moved. some of the important movements
+that doctors want patients to do include getting out
+of bed, getting in bed, getting in chair, getting
+out of chair, these things. and we can use computer
+vision algorithm to help the doctors and nurses
+to track these movements and so on. so this is, again,
+a preliminary work. last but not least,
+aging in place. aging is very important. but how do we keep our seniors
+safe, healthy, but also independent in their living? how do we call out early
+signs of whether it's infection or mobility change,
+sleep disorder, dietary issues? there are so many things. it's computer vision
+plays a big role in this. we are just starting
+to collaborate actually with thailand and
+singapore right now to get these computer
+vision algorithms into the homes of seniors,
+but also keeping in mind the privacy concerns. so these are just examples. last but not the least,
+i'm actually still very excited by the long
+future where i think no matter what we do, we probably
+will enter a world where robots
+collaborate with humans to make our lives better. so ambient intelligence
+is passive sensors. it can do certain things. but eventually i think embodied
+ai will be very, very important in helping people, whether
+it's firefighters, or doctors, or caretakers, or
+teachers, or so on. and technically,
+we need to close the loop between
+perception and action to bring robots or
+embodied ai to the world. well, the gap is
+still pretty high. this is a robot. i think-- i don't know. it's a boston dynamics
+robot or some kind of robot. it's a pretty miserable
+robot trying to put a box and miserably failed. and i know there are so many--
+robotic research is also really progressing really fast. so it's not fair to just
+show that one example. but in general, we are still
+a lot of robotic learning and robotic research
+right now is still on skill level tasks,
+short horizon goals, and closed world instruction. i want to share with
+you one work that at least was attempted
+towards robotic learning to open world instruction. it's still not fully
+closing all the gap, and i don't claim to do so. but at least we're
+working on one dimension. and that is some of
+you know our work voxposer, just released
+half a year ago. where we look at a
+typical robotic task such as open the
+door, or whatever, a robotic task in the wild. and the idea in today's robotic
+learning is you give a task, and you try to give
+a training set, and then you try to
+train an action model. and then you test it. but the problem is,
+how do you generalize? how do you hope in the
+wild generalization? and how do you hope that
+instruction can be open world? and here's the result.
+the focus of this work is motion planning in the
+wild or using open vocabulary. and the idea is
+to actually borrow from large language models. from large language model,
+to compose the task, and from also a
+visual language model to identify the goal
+and also the obstacles, and then use a code
+generated 3d value map to guide to do motion planning. and i'm not going
+to get into this. but quickly, so once the
+robot takes the instruction, open the top drawer, you use
+llm to compose the instruction. and because the llm helps you
+to identify the objects as well as the actions, you can go use
+a vlm, visual language model, to identify the objects
+that you need in the world. every time you do
+that, you're starting to update a planning map. and it helps to, in this
+case you identify the drawer. the maps sets some values
+and it focuses on the drawer. and if you give it an additional
+instruction of watch out for the vase, and it goes back
+to llm and goes back to vlm, and they identify the vase. and then it identifies
+the planning path with the obstacle, and
+updates the value map, and recomputes the
+motion map, and do it recursively till it has
+more optimized this. so this is the example we see
+in simulation in real world. and there are several
+examples of doing this for articulated objects,
+deformable manipulations, as well as just everyday
+manipulation tasks. ok, in the last
+three minutes, let me just share with you one
+more project, then we're done. is that even with
+voxposer, which i just showed you, and many
+other projects in my lab, i always feel in
+the back of my mind that compared to
+where i come from, which is the visual
+world, is these are very small scale data. very small scale anecdotal
+experimental setup, and there is no
+standardization, and the tasks were more or less lab specific. and compared to the
+real world which is so complex, so dynamic,
+so variable, so interactive, and so multitasking
+it's just unsatisfying. and how do we make progress
+in robotic learning? vision and nlp has
+already shown us that large data drives
+learning so much, and the kind of effective
+benchmarking drives learning. so how do we combine
+the goal of large data and effective benchmarking
+for robotic learning has been something on my mind. and this is the new project
+that we have been doing. actually, it's not
+so new anymore, for the past three
+years called behavior, benchmark for everyday
+household activities in virtual interactive
+ecological environments. and let me just
+cut to the chase. instead of small anecdotal tasks
+that we want to train robots on, we want to do 1,000
+tasks, 1,000 tasks that matter to people. so we started actually by
+a human centered approach. we literally go to thousands
+of people and ask them, would you like a robot
+to help you with-- so let's try this. would you like a
+robot to help you with cleaning kitchen floor? yeah, sort of, mostly. ok. shoveling snow? yeah. folding laundry? audience: yeah. fei-fei li: yeah, ok. cooking breakfast [interposing voices] fei-fei li: ok, i don't know. i get mixed-- ranjay wants everything. i get mixed reviews. ok, this one, opening
+christmas gift? audience: no. fei-fei li: right, yeah exactly. ok, i'm glad you're
+not a robot, ranjay. so we actually took this
+human centered approach. we went to the government
+data of american and other countries
+human's daily activities. we go to crowdsourcing platform
+like amazon mechanical turk. we ask people what
+they want robots to do. and we rank thousands of tasks. and then we look at what
+people want help with, and what people
+don't want help with. it turned out cleaning, all
+kinds of cleaning people hate. but opening christmas gift
+or buying a ring, or mix baby cereals, is actually really
+important for humans. we don't want robots help. so we took the top
+1,000 tasks that people want robots help,
+and put together the list for behavior data set. and then we actually scanned
+50 real world environments across eight different things,
+like apartments, restaurants, grocery stores,
+offices, and so on. and this compared to one of
+my favorite works from uw, object verse, is very small. but we got thousands and
+thousands of object assets. and we created a
+simulation environment. ok, all right. i want to actually give
+credits to a lot of good work that came out of uw
+and many other places. so robotic simulation
+is actually a very interesting area of
+research and excellent work, like ai2thor, habitat,
+sapien has been also making a lot of contribution. we collaborated with nvidia,
+especially the omniverse group, to try to focus on creating
+a realistic simulation environment for
+robotic learning that has the good physics, like
+thermal transitional lighting and all that; good perception
+which we did some user studies to show
+that we have very good perceptual experience;
+and also just interactions. and i'm not going to get
+into all the details. we did some comparisons
+and show the strength of this behavior environment for
+training 1,000 robotic tasks. and right now we are working
+on a whole bunch of work that is involving
+benchmarking, robotic learning, multi-sensory robotics,
+and even economic studies on the impact of
+household robots. and ok, i actually want to say
+one thing i'm not showing here. is that we are
+actually doing brain robotic interfacing,
+using behavior environment to use eeg to drive robotic
+arms to show the brain robot interface. and that was just
+published this quarter. so i didn't include this slide. so behavior is becoming a
+very rich research environment hopefully for our community,
+but at least for our lab's robotic work. and of course, the
+goal is one day we'll close the gap between
+robotics and collaborative robots, home robots
+that can help people. and this part of the
+research is really trying to identify
+problems, whether it's health care or
+embodied ai, where we want to build the
+ai to see and also to do what humans want it
+to, whether it's helping patients or helping elderlies. and i think that's
+the key emphasis is really augmentation. and a lot of collaborators
+have participated in this part of the work. this really summarizes the
+three phases of our work or three different types of
+our work, and all of this have accumulated to what i
+would call a human centered ai approach, where we recognize
+it's so important to develop ai with a concern for human impact. it's so important to focus ai
+to augment and enhance humans. and it's actually
+intellectually still important to be inspired by
+human intelligence and cognitive sciences
+and neurosciences. and that was really the
+foundation of stanford's human centered ai institute that
+i co-founded and launched five years ago with faculty from
+english, medicine, economics, linguistics, philosophy,
+political science, law schook, and all that. and hai has been around
+for five years now almost. we do work from digital
+economy to center for research for
+foundational models, where some of our workers-- like percy, chris--
+you guys all know them-- are at the forefront
+of benchmarking and evaluating today's llms. and we also work with faculty
+like michael bernstein, some of him very well, on creating
+ethics and society review process for ai research. and we also focus on
+educating not only ethics focused ai
+to our undergrads, but also really bring that
+education to the outside world, especially for policymakers,
+as well as business executives. and we directly engage with
+the national policy, congress and senate and white house to
+advocate for public sector ai investment,
+especially right now. in fact, uw is
+part of the partner and also senators
+from washington state are extremely important for this
+is to advocate the next bill for national ai research cloud. so this really
+concludes my talk. that was a pretty
+dense quick overview of a human centered
+approach to ai, and i'm happy to take questions. [applause] one more slide. presenter: we have time
+for maybe two questions. audience: what do you think the
+most interesting breakthrough in the next 5 or 10 years
+is going to be in computing? fei-fei li: the
+question is, what do i think the most
+interesting breakthrough in the next 5 or 10 years. i just told you in the talk,
+i'm so bad at predicting. so i think the two things
+that does excite me, one is really just
+deepening ai's impact to so many applications
+in the world. it's not necessarily yet
+another transformer or anything. it's just that we have
+gotten to a point, the technology has so
+much power and capability. we can use this to do
+scientific discovery, to make education
+more personalized, to help health care, to map out
+the biodiversity of our globe. so i think that deepening and
+widening of ai applications or from an academic
+point of view, that deepening and widening
+of interdisciplinary ai is one thing that really excites
+me for the next 5 to 10 years. on the technology side,
+i'm totally biased. i think computer vision is
+due for another revolution. we're at the cusp of it. there's just so much
+that is converging. and i'm really excited to
+see the next wave of vision breakthroughs. presenter: go ahead. audience: so large
+language models have been impressive
+because of what they have been able to do
+with semantic understanding. what do you think the frontier
+for image, computer vision is in that respect? fei-fei li: yeah. this is a very good question. the question is
+large language model is really encoding
+semantics so well. what's the frontier of image? so let me just say something. first of all, the world is
+fundamentally very rich. its language-- ranjay,
+don't yell at me. i still think language is a
+lossy compression of the world. it is very rich. it goes beyond just
+describing the world. it goes into reasoning,
+abstraction, creativity, intention, and all this. but much of language is
+symbolic, is a compression. whereas the world itself in
+3d in 4d is very, very rich. and i think there
+needs to be a model. the world deserves a model. not just language
+deserves a model. there needs to be a
+new wave of technology that really
+fundamentally understands the structure of the world. presenter: ok, we have
+time for one more. go ahead. audience: i really
+agree that language can be lossy, like
+compression of the real world. i'm just wondering, what's
+your opinion on just how english as a whole is just
+so much like dominating the research field
+itself, like all these labeled data sets are labeled
+in english, while other language might have different ways
+of describing objects, describing the relationship
+between objects? that lack of diversity,
+how do you feel about it? fei-fei li: right. so the question is about bias of
+english in our dominating data sets of our ai. i think you're calling out a
+very important aspect of what i call the inherited
+human bias, right? our data sets inherit
+that kind of bias. i do want to say one thing. this is not meant for defense. it's a fun fact that when we
+were constructing imagenet, because the imagenet was-- george miller made this lexicon
+taxonomy in many languages. it was so nice and easy to map
+the synsets of english imagenet to french, italian,
+spanish, portuguese. i think there are also
+asian languages we used. and so even though imagenet
+seemed english to you. the data comes
+from all languages, we could get our
+hands on the license. but that doesn't really solve
+the problem you're saying. i think you're right. i mean we have to
+be really mindful, even in the behavior
+data set, when we're looking at human
+daily activities, we started with the
+us government data. we realized we're very biased. first of all, you realize
+you're biased because there's so much tv watching in the data. and then we actually
+went to europe. but that does not
+include the global south. so we're definitely
+still very biased. presenter: ok, i think
+that's all the time we have. let's thank fei-fei. fei-fei li: thank you. [applause] 
